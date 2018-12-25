@@ -18,12 +18,7 @@ class Cart extends Component {
                 <th />
               </tr>
             </thead>
-            <tbody>
-              <CartItem />
-              <CartItem />
-              <CartItem />
-              <CartResult />
-            </tbody>
+            <tbody>{this.props.children}</tbody>
           </table>
         </div>
       </section>
