@@ -17,6 +17,23 @@ const products = (state = initialState, action) => {
       }
       localStorage.setItem('CART', JSON.stringify(state));
       return [...state];
+
+    case types.DELETE_PRODUCT_IN_CART:
+      index = state.findIndex((item) => item.product.id === action.product.id);
+      if (index !== -1) {
+        state.splice(index, 1);
+      }
+      localStorage.setItem('CART', JSON.stringify(state));
+      return [...state];
+
+    case types.UPDATE_PRODUCT_IN_CART:
+      index = state.findIndex((item) => item.product.id === action.product.id);
+      if (index !== -1) {
+        state[index].quantity = quantity;
+      }
+      localStorage.setItem('CART', JSON.stringify(state));
+      return [...state];
+
     default:
       return [...state];
   }

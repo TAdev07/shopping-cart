@@ -11,6 +11,22 @@ export const actionAddToCart = (product, quantity) => {
 export const actionChangeMessage = (message) => {
   return {
     type: types.CHANGE_MESSAGE,
-    message
-  }
-}
+    message,
+  };
+};
+
+export const actionDeleteProduct = (product, message) => {
+  return {
+    type: types.DELETE_PRODUCT_IN_CART,
+    product,
+    message,
+  };
+};
+
+export const actionUpdateProduct = (product, quantity) => {
+  return {
+    type: types.UPDATE_PRODUCT_IN_CART,
+    product,
+    quantity,
+  };
+};

@@ -1,8 +1,20 @@
 import React, {Component} from 'react';
+import * as message from '../constants/message';
 
 class CartItem extends Component {
   showTotalPrice = (price, quantity) => {
     return price * quantity;
+  };
+
+  onDelete = (product) => {
+    this.props.onDeleteProduct(product);
+    this.props.onChangeMessage(message.MSG_DELETE_PRODUCT_IN_CART_SUCCESS);
+  };
+
+  onUpdateProduct = (product, quantity) => {
+    if (quantity > 0) {
+      this.props.onUpdateProduct(product, quantity);
+    }
   };
   render() {
     const {item} = this.props;
@@ -27,12 +39,18 @@ class CartItem extends Component {
             <label
               className="btn btn-sm btn-primary
                                 btn-rounded waves-effect waves-light"
+              onClick={() =>
+                this.onUpdateProduct(item.product, item.quantity - 1)
+              }
             >
               <span>—</span>
             </label>
             <label
               className="btn btn-sm btn-primary
                                 btn-rounded waves-effect waves-light"
+              onClick={() =>
+                this.onUpdateProduct(item.product, item.quantity + 1)
+              }
             >
               <span>+</span>
             </label>
@@ -46,6 +64,9 @@ class CartItem extends Component {
             data-toggle="tooltip"
             data-placement="top"
             data-original-title="Remove item"
+            onClick={() => {
+              this.onDelete(item.product);
+            }}
           >
             X
           </button>
