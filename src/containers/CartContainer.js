@@ -8,6 +8,7 @@ import CartResult from '../components/CartResult';
 class CartContainer extends Component {
   showCartItem = (cart) => {
     let result = null;
+
     if (cart.length > 0) {
       result = cart.map((item, index) => {
         return <CartItem key={index} item={item} />;

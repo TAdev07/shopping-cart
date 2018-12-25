@@ -28,13 +28,13 @@ class CartItem extends Component {
               className="btn btn-sm btn-primary
                                 btn-rounded waves-effect waves-light"
             >
-              <a>—</a>
+              <span>—</span>
             </label>
             <label
               className="btn btn-sm btn-primary
                                 btn-rounded waves-effect waves-light"
             >
-              <a>+</a>
+              <span>+</span>
             </label>
           </div>
         </td>
@@ -45,7 +45,6 @@ class CartItem extends Component {
             className="btn btn-sm btn-primary waves-effect waves-light"
             data-toggle="tooltip"
             data-placement="top"
-            title
             data-original-title="Remove item"
           >
             X
