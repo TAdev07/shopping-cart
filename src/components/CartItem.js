@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import * as message from '../constants/message';
+import PropTypes from 'prop-types';
 
 class CartItem extends Component {
   showTotalPrice = (price, quantity) => {
@@ -75,5 +76,23 @@ class CartItem extends Component {
     );
   }
 }
+
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    product: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      inventory: PropTypes.number.isRequired,
+      rating: PropTypes.number.isRequired,
+    }).isRequired,
+    quantity: PropTypes.number.isRequired,
+  }).isRequired,
+  onDeleteProduct: PropTypes.func.isRequired,
+  onChangeMessage: PropTypes.func.isRequired,
+  onUpdateProduct: PropTypes.func.isRequired,
+};
 
 export default CartItem;

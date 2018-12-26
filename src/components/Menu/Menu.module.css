@@ -1,0 +1,195 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  z-index: 9;
+  box-shadow: 0 7px 8px -7px #777;
+}
+
+.toggle {
+  width: 100%;
+  margin: 0px;
+  border: none;
+  top: 0;
+  left: 0;
+  height: 50px;
+  padding: 0px 15px;
+  background: #fff;
+  display: none;
+  position: fixed;
+  box-shadow: 0 7px 8px -7px #777;
+  z-index: 9;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: bold;
+  float: left;
+  line-height: 50px;
+}
+
+.title img {
+  width: 100px;
+  height: 48px;
+}
+
+.button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  float: right;
+  margin-top: 7px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #346abb;
+  color: #fff;
+}
+
+.navBar {
+  width: 70%;
+  margin: auto;
+}
+
+.navBar.show {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  transition: all 0.4s ease-out;
+}
+.navItem {
+  width: 20%;
+}
+.navItem > a {
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  font-weight: bold;
+  color: #000;
+  border-radius: 0px;
+  display: block;
+}
+
+.navItem:hover > a,
+.nav li .active {
+  text-decoration: none;
+  color: #fff;
+  background: #346abb;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+  margin-right: 10%;
+}
+
+.logo img {
+  width: 200px;
+  height: 100px;
+}
+
+.cart img {
+  width: 25px;
+  height: 25px;
+}
+
+.cart {
+  padding: 10px;
+  border-radius: 35px;
+  background: #51515170;
+  margin: auto;
+  position: relative;
+}
+
+.badge {
+  border-radius: 10px;
+  background-color: red;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+}
+
+.badge span {
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 400;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767.98px) {
+  .toggle {
+    display: block;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .cart {
+    right: 70px;
+    top: 3px;
+    z-index: 10;
+    position: fixed;
+  }
+
+  .navBar {
+    opacity: 0;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .navBar.show {
+    opacity: 1;
+  }
+
+  .nav {
+    flex-direction: column;
+    left: calc(-100% - 100px);
+    background-color: #fff;
+    transition: all 0.4s ease-out;
+    width: 70%;
+    height: 100vh;
+    top: 50px;
+    position: absolute;
+  }
+
+  .nav li {
+    width: 100%;
+  }
+
+  .show .nav {
+    left: 0;
+  }
+  .navItem > a {
+    text-align: left;
+    padding: 20px;
+  }
+  .close {
+    position: absolute;
+    height: 100vh;
+    width: 30%;
+    right: 0;
+    top: 50px;
+  }
+  .wrapper {
+    justify-content: flex-end;
+  }
+}

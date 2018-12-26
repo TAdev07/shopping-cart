@@ -44,9 +44,9 @@ class Product extends Component {
               </strong>
             </h4>
             <ul className="rating">{this.showRating(product.rating)}</ul>
-            <p className="card-text">{product.description}</p>
+            <p className="card-text">{product.shortDescription}</p>
             <div className="card-footer">
-              <span className="left">{product.price}$</span>
+              <span className="left">{product.originalPrice}$</span>
               <span className="right">
                 <span
                   className="btn-floating blue-gradient"

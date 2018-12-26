@@ -3,20 +3,25 @@ import {connect} from 'react-redux';
 import Products from '../components/Products';
 import Product from '../components/Product';
 import PropTypes from 'prop-types';
-import {actionAddToCart, actionChangeMessage} from '../actions';
+import {addToCart, changeMessage, getProduct} from '../actions';
 
 class ProductsContainer extends Component {
+  async componentDidMount() {
+    const {getProduct} = this.props;
+    await getProduct();
+  }
+
   showProducts = (products) => {
     let result = null;
-    const {onAddToCart, onChangeMessage} = this.props;
+    const {addToCart, changeMessage} = this.props;
     if (products.length > 0) {
       result = products.map((product, index) => {
         return (
           <Product
             key={index}
             product={product}
-            onAddToCart={onAddToCart}
-            onChangeMessage={onChangeMessage}
+            onAddToCart={addToCart}
+            onChangeMessage={changeMessage}
           />
         );
       });
@@ -33,7 +38,7 @@ class ProductsContainer extends Component {
 ProductsContainer.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
@@ -42,8 +47,8 @@ ProductsContainer.propTypes = {
       rating: PropTypes.number.isRequired,
     })
   ).isRequired,
-  onChangeMessage: PropTypes.func.isRequired,
-  onAddToCart: PropTypes.func.isRequired,
+  changeMessage: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => {
@@ -52,15 +57,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, props) => {
-  return {
-    onAddToCart: (product) => {
-      dispatch(actionAddToCart(product, 1));
-    },
-    onChangeMessage: (message) => {
-      dispatch(actionChangeMessage(message));
-    },
-  };
+const mapDispatchToProps = {
+  addToCart,
+  changeMessage,
+  getProduct,
 };
 
 export default connect(
