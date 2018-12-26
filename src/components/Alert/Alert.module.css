@@ -1,0 +1,21 @@
+.alert {
+  margin-top: 10px;
+  margin-bottom: 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 17px 15px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.danger {
+  background-color: #fffbfb;
+  border-color: #ff959c;
+  color: #ff3b27;
+}
+
+.danger::before {
+  content: '\f057';
+  font-family: fontAwesome;
+  padding-right: 10px;
+}

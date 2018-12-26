@@ -3,3 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  min-width: 1170px;
+  min-height: 100%;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  line-height: normal;
+  background-color: #f4f4f4;
+}

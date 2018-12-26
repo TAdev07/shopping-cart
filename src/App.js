@@ -30,7 +30,9 @@ class App extends Component {
       <Router>
         <div>
           <Menu />
-          <main id="mainContainer">{this.showContentMenus(routes)}</main>
+          <main id="mainContainer">
+            <div className="container">{this.showContentMenus(routes)}</div>
+          </main>
           <Footer />
         </div>
       </Router>

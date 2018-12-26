@@ -5,7 +5,7 @@ class CartResult extends Component {
     let result = 0;
     if (cart.length > 0) {
       for (let item of cart) {
-        result += item.product.price * item.quantity;
+        result += item.product.salePrice * item.quantity;
       }
     }
     return result;

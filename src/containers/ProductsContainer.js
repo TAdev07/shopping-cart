@@ -41,10 +41,9 @@ ProductsContainer.propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      inventory: PropTypes.number.isRequired,
-      rating: PropTypes.number.isRequired,
+      shortDescription: PropTypes.string.isRequired,
+      salePrice: PropTypes.number.isRequired,
+      originalPrice: PropTypes.number.isRequired,
     })
   ).isRequired,
   changeMessage: PropTypes.func.isRequired,

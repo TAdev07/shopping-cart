@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import * as message from '../constants/message';
+import * as message from '../../constants/message';
 import PropTypes from 'prop-types';
 
 class CartItem extends Component {
@@ -30,10 +30,10 @@ class CartItem extends Component {
         </th>
         <td>
           <h5>
-            <strong>Iphone 6 Plus</strong>
+            <strong>{item.product.name}</strong>
           </h5>
         </td>
-        <td>{item.product.price}$</td>
+        <td>{item.product.salePrice}$</td>
         <td className="center-on-small-only">
           <span className="qty">{item.quantity}</span>
           <div className="btn-group radio-group" data-toggle="buttons">
@@ -57,7 +57,7 @@ class CartItem extends Component {
             </label>
           </div>
         </td>
-        <td>{this.showTotalPrice(item.product.price, item.quantity)}$</td>
+        <td>{this.showTotalPrice(item.product.salePrice, item.quantity)}$</td>
         <td>
           <button
             type="button"
