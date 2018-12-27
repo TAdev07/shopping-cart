@@ -1,6 +1,6 @@
 export const configureApp = {
   api: {
-    baseUrl: 'https://api.demo.nordiccoder.com/api/',
+    baseUrl: 'http://api.demo.nordiccoder.com/api/',
     timeout: 30000,
   },
   primaryColor: {

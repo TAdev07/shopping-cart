@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Menu from './components/Menu/Menu';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import axios from 'axios';
 import {configureApp} from './configureApp';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
