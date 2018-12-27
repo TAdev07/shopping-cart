@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Cart from '../components/Cart/Cart';
 import CartItem from '../components/Cart/CartItem';
 import CartResult from '../components/Cart/CartResult';
-import EmptyCart from '../components/Cart/CartItem';
+
 import {
   removeProductInCart,
   changeMessage,
@@ -44,13 +44,12 @@ class CartContainer extends Component {
   };
 
   render() {
-    const {cart} = this.props
+    const {cart} = this.props;
     return (
-
-          <Cart>
-            {this.showCartItem(cart)}
-            {this.showTotalPrice(cart)}
-          </Cart>
+      <Cart>
+        {this.showCartItem(cart)}
+        {this.showTotalPrice(cart)}
+      </Cart>
     );
   }
 }

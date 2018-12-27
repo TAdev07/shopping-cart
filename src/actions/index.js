@@ -5,3 +5,5 @@ export {
   removeProductInCart,
   updateProductInCart,
 } from './actionCart';
+export {getCategory} from './actionCategories';
+export {getProductInCategory} from './actionFilters';

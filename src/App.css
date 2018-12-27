@@ -1,13 +1,25 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  min-width: 1170px;
-  min-height: 100%;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   line-height: normal;
   background-color: #f4f4f4;
+}
+
+ul {
+  list-style: none;
+}
+
+#mainContainer {
+  padding-top: 5.5rem;
+}
+
+@media (max-width: 767.98px) {
+  #mainContainer {
+    padding-top: 50px;
+  }
 }
