@@ -1,20 +1,20 @@
 import * as types from '../constants/actionTypes';
 
-const query = `query products {
-  products {
+const query = (id) => `query products {
+  product(productId: "${id}") {
     id
     name
-    description
-    rating
     price
+    description
     images {
       url
       alt
     }
+    rating
   }
 }`;
 
-export const getProduct = (_) => (dispatch) => {
+export const getProductDetail = (id) => (dispatch) => {
   return fetch('https://nordic-shop-api.herokuapp.com/', {
     credentials: 'omit',
     headers: {
@@ -24,7 +24,7 @@ export const getProduct = (_) => (dispatch) => {
     },
     body: JSON.stringify({
       variables: {},
-      query: query,
+      query: query(id),
     }),
     method: 'POST',
     mode: 'cors',
@@ -32,9 +32,10 @@ export const getProduct = (_) => (dispatch) => {
     .then((response) => response.json())
     .then((res) => {
       const {data} = res;
+      console.log(data);
       dispatch({
-        type: types.GET_PRODUCT,
-        payload: data.products,
+        type: types.GET_PRODUCT_DETAIL,
+        payload: data.product,
       });
     })
     .catch((err) => {

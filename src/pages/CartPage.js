@@ -12,10 +12,10 @@ class CartPage extends Component {
       quantityOrder += item.quantity;
     }
     return (
-      <div>
+      <>
         <AlertCartContainer />
         {quantityOrder === 0 ? <EmptyCart /> : <CartContainer />}
-      </div>
+      </>
     );
   }
 }

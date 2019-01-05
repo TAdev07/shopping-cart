@@ -5,10 +5,10 @@ class CartResult extends Component {
     let result = 0;
     if (cart.length > 0) {
       for (let item of cart) {
-        result += item.product.salePrice * item.quantity;
+        result += item.product.price * item.quantity;
       }
     }
-    return result;
+    return result.toFixed(1);
   };
   render() {
     const {cart} = this.props;

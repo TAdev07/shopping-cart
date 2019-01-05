@@ -1,16 +1,41 @@
 import * as types from '../constants/actionTypes';
-import axios from 'axios';
+
+const query = (filter) => `query products {
+  products(categoryId:"${filter}") {
+    id
+    name
+    description
+    rating
+    price
+    images {
+      url
+      alt
+    }
+  }
+}`;
 
 export const getProductInCategory = (id) => (dispatch) => {
-  return axios
-    .get(`categories/${id}/products`)
+  return fetch('https://nordic-shop-api.herokuapp.com/', {
+    credentials: 'omit',
+    headers: {
+      accept: '*/*',
+      'accept-language': 'en-US,en;q=0.9',
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      variables: {},
+      query: query(id),
+    }),
+    method: 'POST',
+    mode: 'cors',
+  })
+    .then((response) => response.json())
     .then((res) => {
       const {data} = res;
-      data.header.status === 200 &&
-        dispatch({
-          type: types.GET_PRODUCT_IN_CATEGORY,
-          payload: data.body,
-        });
+      dispatch({
+        type: types.GET_PRODUCT_IN_CATEGORY,
+        payload: data.products,
+      });
     })
     .catch((err) => {
       console.log(err);

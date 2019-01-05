@@ -40,10 +40,10 @@ ProductsContainer.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      shortDescription: PropTypes.string.isRequired,
-      salePrice: PropTypes.number.isRequired,
-      originalPrice: PropTypes.number.isRequired,
+      images: PropTypes.array.isRequired,
+      description: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      rating: PropTypes.number.isRequired,
     })
   ).isRequired,
   changeMessage: PropTypes.func.isRequired,

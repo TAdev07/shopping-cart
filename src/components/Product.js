@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
 import * as message from '../constants/message';
 
 class Product extends Component {
@@ -32,10 +33,14 @@ class Product extends Component {
       <div className="col-lg-4 col-md-6 mb-r">
         <div className="card text-center card-cascade narrower">
           <div className="view overlay hm-white-slight z-depth-1">
-            <img src={product.image} className="img-fluid" alt={product.name} />
-            <a href=".#">
+            <img
+              src={product.images[0].url}
+              className="img-fluid"
+              alt={product.name}
+            />
+            <NavLink to={`${product.name.split(' ').join('-')}-${product.id}`}>
               <div className="mask waves-light waves-effect waves-light" />
-            </a>
+            </NavLink>
           </div>
           <div className="card-body">
             <h4 className="card-title">
@@ -44,9 +49,9 @@ class Product extends Component {
               </strong>
             </h4>
             <ul className="rating">{this.showRating(product.rating)}</ul>
-            <p className="card-text">{product.shortDescription}</p>
+            <p className="card-text">{product.description}</p>
             <div className="card-footer">
-              <span className="left">{product.originalPrice}$</span>
+              <span className="left">{product.price}$</span>
               <span className="right">
                 <span
                   className="btn-floating blue-gradient"

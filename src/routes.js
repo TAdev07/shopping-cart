@@ -2,12 +2,18 @@ import React from 'react';
 import Home from './pages/HomePage';
 import CartPage from './pages/CartPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 
 const routes = [
   {
     path: '/',
     exact: true,
     main: () => <Home />,
+  },
+  {
+    path: '/:name',
+    exact: false,
+    main: ({match}) => <ProductDetailPage match={match} />,
   },
   {
     path: '/cart',

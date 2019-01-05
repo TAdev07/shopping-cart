@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class CartItem extends Component {
   showTotalPrice = (price, quantity) => {
-    return price * quantity;
+    return (price * quantity).toFixed(1);
   };
 
   onDelete = (product) => {
@@ -23,7 +23,7 @@ class CartItem extends Component {
       <tr>
         <th scope="row">
           <img
-            src={item.product.image}
+            src={item.product.images[0].url}
             alt={item.product.name}
             className="img-fluid z-depth-0"
           />
@@ -33,7 +33,7 @@ class CartItem extends Component {
             <strong>{item.product.name}</strong>
           </h5>
         </td>
-        <td>{item.product.salePrice}$</td>
+        <td>{item.product.price}$</td>
         <td className="center-on-small-only">
           <span className="qty">{item.quantity}</span>
           <div className="btn-group radio-group" data-toggle="buttons">
@@ -57,7 +57,7 @@ class CartItem extends Component {
             </label>
           </div>
         </td>
-        <td>{this.showTotalPrice(item.product.salePrice, item.quantity)}$</td>
+        <td>{this.showTotalPrice(item.product.price, item.quantity)}$</td>
         <td>
           <button
             type="button"
@@ -82,10 +82,9 @@ CartItem.propTypes = {
     product: PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
+      images: PropTypes.array.isRequired,
       description: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-      inventory: PropTypes.number.isRequired,
       rating: PropTypes.number.isRequired,
     }).isRequired,
     quantity: PropTypes.number.isRequired,

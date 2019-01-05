@@ -7,3 +7,4 @@ export {
 } from './actionCart';
 export {getCategory} from './actionCategories';
 export {getProductInCategory} from './actionFilters';
+export {getProductDetail} from './actionProductDetail';

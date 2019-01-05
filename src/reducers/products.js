@@ -5,7 +5,7 @@ const products = (state = [], action) => {
     case types.GET_PRODUCT:
       return action.payload;
     case types.GET_PRODUCT_IN_CATEGORY:
-      return action.payload
+      return action.payload;
     default:
       return state;
   }

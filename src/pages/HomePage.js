@@ -9,7 +9,7 @@ import FiltersContainer from '../containers/FiltersContainer';
 export default class HomePage extends Component {
   render() {
     return (
-      <div>
+      <>
         <Banner />
         <div className={styles.containerFluid}>
           <CategoriesContainer />
@@ -23,7 +23,7 @@ export default class HomePage extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

@@ -23,7 +23,7 @@ export class FiltersContainer extends Component {
   render() {
     const {categories} = this.props;
     return (
-      <div>
+      <>
         <Filters>
           <CategoryFilter
             categories={categories}
@@ -31,7 +31,7 @@ export class FiltersContainer extends Component {
           />
           <PriceFilter />
         </Filters>
-      </div>
+      </>
     );
   }
 }
