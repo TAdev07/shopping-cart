@@ -25,9 +25,10 @@ export const getCategory = (_) => (dispatch) => {
     .then((response) => response.json())
     .then((res) => {
       const {data} = res;
+      let all = {name: 'all'};
       dispatch({
         type: types.GET_CATEGORY,
-        payload: data.categories,
+        payload: [all, ...data.categories],
       });
     })
     .catch((err) => {
