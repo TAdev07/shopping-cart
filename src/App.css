@@ -209,6 +209,19 @@ input::-webkit-inner-spin-button {
   display: block;
 }
 
+.card .card-body p {
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h4.card-title {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 @-webkit-keyframes opacity {
   0% {
     opacity: 0;

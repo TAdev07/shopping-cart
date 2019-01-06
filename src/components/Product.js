@@ -32,18 +32,16 @@ class Product extends Component {
     return (
       <div className="col-lg-4 col-md-6 mb-r">
         <div className="card text-center card-cascade narrower">
-          <div className="view overlay hm-white-slight z-depth-1">
+          <NavLink
+            to={`product/${product.name.split(' ').join('-')}-${product.id}`}
+          >
             <img
               src={product.images[0].url}
               className="img-fluid"
               alt={product.name}
             />
-            <NavLink
-              to={`product/${product.name.split(' ').join('-')}-${product.id}`}
-            >
-              <div className="mask waves-light waves-effect waves-light" />
-            </NavLink>
-          </div>
+          </NavLink>
+
           <div className="card-body">
             <NavLink
               to={`product/${product.name.split(' ').join('-')}-${product.id}`}
