@@ -38,16 +38,22 @@ class Product extends Component {
               className="img-fluid"
               alt={product.name}
             />
-            <NavLink to={`${product.name.split(' ').join('-')}-${product.id}`}>
+            <NavLink
+              to={`product/${product.name.split(' ').join('-')}-${product.id}`}
+            >
               <div className="mask waves-light waves-effect waves-light" />
             </NavLink>
           </div>
           <div className="card-body">
-            <h4 className="card-title">
-              <strong>
-                <a href=".#">{product.name}</a>
-              </strong>
-            </h4>
+            <NavLink
+              to={`product/${product.name.split(' ').join('-')}-${product.id}`}
+            >
+              <h4 className="card-title">
+                <strong>
+                  <a href=".#">{product.name}</a>
+                </strong>
+              </h4>
+            </NavLink>
             <ul className="rating">{this.showRating(product.rating)}</ul>
             <p className="card-text">{product.description}</p>
             <div className="card-footer">

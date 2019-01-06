@@ -11,7 +11,7 @@ const routes = [
     main: () => <Home />,
   },
   {
-    path: '/:name',
+    path: '/product/:name',
     exact: false,
     main: ({match}) => <ProductDetailPage match={match} />,
   },

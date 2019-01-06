@@ -12,7 +12,7 @@ export default class HomePage extends Component {
       <>
         <Banner />
         <div className={styles.containerFluid}>
-          <CategoriesContainer />
+          {/* <CategoriesContainer /> */}
           {/* <MessageContainer /> */}
           <div className={styles.row}>
             <div className={styles.md_3}>

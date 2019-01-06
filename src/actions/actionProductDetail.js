@@ -32,7 +32,6 @@ export const getProductDetail = (id) => (dispatch) => {
     .then((response) => response.json())
     .then((res) => {
       const {data} = res;
-      console.log(data);
       dispatch({
         type: types.GET_PRODUCT_DETAIL,
         payload: data.product,
